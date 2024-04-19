@@ -7,7 +7,7 @@ import { useResponsive } from '@app/hooks/useResponsive';
 import { BaseSpin } from '@app/components/common/BaseSpin/BaseSpin';
 import { PaymentCard } from '@app/interfaces/interfaces';
 import { useAppSelector } from '@app/hooks/reduxHooks';
-import { getPaymentCards } from '@app/api/paymentCards.api';
+// import { getPaymentCards } from '@app/api/paymentCards.api';
 import { BaseRow } from '@app/components/common/BaseRow/BaseRow';
 import { BaseCol } from '@app/components/common/BaseCol/BaseCol';
 
@@ -21,10 +21,10 @@ export const PaymentMethod: React.FC = () => {
 
   useEffect(() => {
     if (id) {
-      setLoading(true);
-      getPaymentCards(id)
-        .then((res) => setCards(res))
-        .finally(() => setLoading(false));
+      // setLoading(true);
+      // getPaymentCards(id)
+      //   .then((res) => setCards(res))
+      //   .finally(() => setLoading(false));
     }
   }, [id]);
 
