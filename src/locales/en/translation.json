@@ -71,7 +71,9 @@
     "sizes": "Button sizes",
     "small": "Small",
     "text": "Text",
-    "types": "Button types"
+    "types": "Button types",
+    "add": "Tạo câu hỏi mới",
+    "delete": "Xoá câu hỏi"
   },
   "charts": {
     "averageValue": "Average Value",
@@ -147,6 +149,7 @@
     "medical-dashboard": "Medical Dashboard",
     "dataDisplay": "Data display",
     "dataTables": "Data Tables",
+    "createTest": "Create Test",
     "dateTime": "Date & Time",
     "dateTimePicker": "DateTime Picker",
     "day": "day",
@@ -234,7 +237,14 @@
     "verifyEmailPage": "Verify email page",
     "warning": "Warning",
     "zipcode": "Zipcode",
-    "delete": "Delete"
+    "delete": "Delete",
+    "team": "Đơn vị ra đề",
+    "topic": "Chủ đề bài thi",
+    "dateTest": "Ngày thi",
+    "timeTest": "Thời gian làm bài",
+    "questionNumber": "Câu hỏi:",
+    "answer": "Đáp án:",
+    "numberTest": "Câu số 1"
   },
   "medical-dashboard": {
     "activity": {
@@ -513,7 +523,12 @@
     "searchText": "input search text",
     "sizes": "Input sizes",
     "small": "small size",
-    "textarea": "Textarea"
+    "textarea": "Textarea",
+    "infoTest": "Thông tin bài thi",
+    "nameTest": "Tên bài thi",
+    "createTest": "Câu số 1",
+    "createTest2": "Câu số 2"
+    
   },
   "login": {
     "facebookLink": "Continue with Facebook",
