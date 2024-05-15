@@ -34,6 +34,7 @@
     "medical-dashboard": "Bảng điều khiển y tế",
     "dataDisplay": "Hiển thị dữ liệu",
     "dataTables": "Bảng dữ liệu",
+    "createTest": "Tạo bài thi",
     "dateTime": "Ngày & Giờ",
     "dateTimePicker": "Bộ chọn ngày & giờ",
     "day": "ngày",
@@ -119,7 +120,11 @@
     "upload": "Tải lên",
     "verifCodeSent": "Chúng tôi đã gửi một mã xác nhận đến email của bạn",
     "verifyEmailPage": "Trang xác nhận email",
-    "warning": "Cảnh báo"
+    "warning": "Cảnh báo",
+    "team": "Đơn vị ra đề",
+    "topic": "Chủ đề bài thi",
+    "dateTest": "Ngày thi",
+    "timeTest": "Thời gian làm bài"
   },
   "profile": {
     "nav": {

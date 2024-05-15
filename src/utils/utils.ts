@@ -1,4 +1,5 @@
 import { NotificationType } from '@app/components/common/BaseNotification/BaseNotification';
+import { Priority } from '@app//constants/enums/priorities';
 import { CurrencyTypeEnum, Severity } from '@app/interfaces/interfaces';
 import { BaseBadgeProps } from '@app/components/common/BaseBadge/BaseBadge';
 
@@ -61,6 +62,20 @@ export const hexToHSL = (hex: string): { h: number; s: number; l: number } => {
   }
 };
 
+export const defineColorByPriority = (priority: Priority): string => {
+  switch (priority) {
+    case Priority.INFO:
+      return 'var(--primary-color)';
+    case Priority.LOW:
+      return 'var(--success-color)';
+    case Priority.MEDIUM:
+      return 'var(--warning-color)';
+    case Priority.HIGH:
+      return 'var(--error-color)';
+    default:
+      return 'var(--success-color)';
+  }
+};
 export const defineColorBySeverity = (severity: NotificationType | undefined, rgb = false): string => {
   const postfix = rgb ? 'rgb-color' : 'color';
   switch (severity) {

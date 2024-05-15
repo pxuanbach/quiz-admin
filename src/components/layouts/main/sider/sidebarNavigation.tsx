@@ -10,6 +10,7 @@ import {
   UserOutlined,
   BlockOutlined,
   LockOutlined,
+  FolderAddOutlined,
 } from '@ant-design/icons';
 // import { ReactComponent as NftIcon } from '@app/assets/icons/nft-icon.svg';
 
@@ -27,6 +28,18 @@ export const sidebarNavigation: SidebarNavigationItem[] = [
     key: 'dashboard',
     url: '',
     icon: <DashboardOutlined />,
+  },
+  {
+    title: 'common.dataTables',
+    key: 'dataTables',
+    url: '/data-tables',
+    icon: <TableOutlined />,
+  },
+  {
+    title: 'common.createTest',
+    key: 'createTest',
+    url: '/create-test',
+    icon: <FolderAddOutlined />,
   },
   {
     title: 'common.authPages',
