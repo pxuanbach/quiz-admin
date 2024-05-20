@@ -8,8 +8,17 @@ export interface Tag {
 export interface BasicTableRow {
   key: number;
   name: string;
-  age: number;
-  address: string;
+  date: string;
+  quantity: string;
+  tags?: Tag[];
+}
+
+export interface BasicTableUserRow {
+  key: number;
+  name: string;
+  unit: string;
+  date: string;
+  result: string;
   tags?: Tag[];
 }
 
@@ -36,6 +45,10 @@ export interface EditableTableData extends BasicTableData {
   data: BasicTableRow[];
 }
 
+export interface EditableTableDataUser extends BasicTableData {
+  data: BasicTableRow[];
+}
+
 export const getBasicTableData = (pagination: Pagination): Promise<BasicTableData> => {
   return new Promise((res) => {
     setTimeout(() => {
@@ -44,8 +57,10 @@ export const getBasicTableData = (pagination: Pagination): Promise<BasicTableDat
           {
             key: 1,
             name: 'John Brown',
-            age: 32,
-            address: 'New York No. 1 Lake Park',
+            unit: 'Đ4 - PV01',
+            date: 32,
+            quantity: 'New York No. 1 Lake Park',
+            resulte: '',
             tags: [
               { value: 'Architect', priority: Priority.LOW },
               { value: 'Engineer', priority: Priority.MEDIUM },
@@ -54,15 +69,19 @@ export const getBasicTableData = (pagination: Pagination): Promise<BasicTableDat
           {
             key: 2,
             name: 'Jim Green',
-            age: 42,
-            address: 'London No. 1 Lake Park',
+            unit: 'Đ4 - PV01',
+            date: 42,
+            quantity: 'London No. 1 Lake Park',
+            resulte: '',
             tags: [{ value: 'Doctor', priority: Priority.HIGH }],
           },
           {
             key: 3,
             name: 'Joe Black',
-            age: 32,
-            address: 'Sidney No. 1 Lake Park',
+            unit: 'Đ4 - PV01',
+            date: 32,
+            resulte: '',
+            quantity: 'Sidney No. 1 Lake Park',
             tags: [
               { value: 'Professor', priority: Priority.INFO },
               { value: 'Architect', priority: Priority.LOW },
@@ -71,8 +90,10 @@ export const getBasicTableData = (pagination: Pagination): Promise<BasicTableDat
           {
             key: 4,
             name: 'Pavel Green',
-            age: 30,
-            address: 'New York No. 1 Lake Park',
+            unit: 'Đ4 - PV01',
+            date: 30,
+            resulte: '',
+            quantity: 'New York No. 1 Lake Park',
             tags: [
               { value: 'Engineer', priority: Priority.MEDIUM },
               { value: 'Architect', priority: Priority.LOW },
@@ -81,15 +102,19 @@ export const getBasicTableData = (pagination: Pagination): Promise<BasicTableDat
           {
             key: 5,
             name: 'Alex Brown',
-            age: 26,
-            address: 'Minsk',
+            unit: 'Đ4 - PV01',
+            date: 26,
+            resulte: '',
+            quantity: 'Minsk',
             tags: [{ value: 'Engineer', priority: Priority.MEDIUM }],
           },
           {
             key: 6,
             name: 'Josh Black',
-            age: 21,
-            address: 'New York No. 1 Lake Park',
+            unit: 'Đ4 - PV01',
+            date: 21,
+            resulte: '',
+            quantity: 'New York No. 1 Lake Park',
             tags: [
               { value: 'Teacher', priority: Priority.INFO },
               { value: 'Architect', priority: Priority.LOW },
@@ -98,22 +123,28 @@ export const getBasicTableData = (pagination: Pagination): Promise<BasicTableDat
           {
             key: 7,
             name: 'Cris Green',
-            age: 22,
-            address: 'Sidney No. 1 Lake Park',
+            unit: 'Đ4 - PV01',
+            date: 22,
+            resulte: '',
+            quantity: 'Sidney No. 1 Lake Park',
             tags: [{ value: 'Architect', priority: Priority.LOW }],
           },
           {
             key: 8,
             name: 'Jaime Black',
-            age: 23,
-            address: 'New York No. 1 Lake Park',
+            unit: 'Đ4 - PV01',
+            date: 23,
+            resulte: '',
+            quantity: 'New York No. 1 Lake Park',
             tags: [{ value: 'Engineer', priority: Priority.MEDIUM }],
           },
           {
             key: 9,
             name: 'Alina Brown',
-            age: 19,
-            address: 'Minsk',
+            unit: 'Đ4 - PV01',
+            date: 19,
+            quantity: 'Minsk',
+            resulte: '',
             tags: [
               { value: 'Professor', priority: Priority.LOW },
               { value: 'Teacher', priority: Priority.INFO },
@@ -122,8 +153,10 @@ export const getBasicTableData = (pagination: Pagination): Promise<BasicTableDat
           {
             key: 10,
             name: 'Cris Brown',
-            age: 25,
-            address: 'London',
+            unit: 'Đ4 - PV01',
+            date: 25,
+            quantity: 'London',
+            resulte: '',
             tags: [
               { value: 'Engineer', priority: Priority.MEDIUM },
               { value: 'Teacher', priority: Priority.INFO },
@@ -132,8 +165,10 @@ export const getBasicTableData = (pagination: Pagination): Promise<BasicTableDat
           {
             key: 11,
             name: 'Alina Fens',
-            age: 19,
-            address: 'Minsk',
+            unit: 'Đ4 - PV01',
+            date: 19,
+            quantity: 'Minsk',
+            resulte: '',
             tags: [
               { value: 'Professor', priority: Priority.LOW },
               { value: 'Teacher', priority: Priority.INFO },
@@ -142,8 +177,10 @@ export const getBasicTableData = (pagination: Pagination): Promise<BasicTableDat
           {
             key: 12,
             name: 'Alex Snak',
-            age: 28,
-            address: 'Brest',
+            unit: 'Đ4 - PV01',
+            date: 28,
+            quantity: 'Brest',
+            resulte: '',
             tags: [
               { value: 'Professor', priority: Priority.LOW },
               { value: 'Doctor', priority: Priority.HIGH },
@@ -152,8 +189,10 @@ export const getBasicTableData = (pagination: Pagination): Promise<BasicTableDat
           {
             key: 13,
             name: 'Pavel Dubrouski',
-            age: 26,
-            address: 'Minsk',
+            unit: 'Đ4 - PV01',
+            date: 26,
+            quantity: 'Minsk',
+            resulte: '',
             tags: [
               { value: 'Professor', priority: Priority.LOW },
               { value: 'Doctor', priority: Priority.HIGH },
@@ -164,15 +203,18 @@ export const getBasicTableData = (pagination: Pagination): Promise<BasicTableDat
           {
             key: 14,
             name: 'Jack Donald',
-            age: 24,
-            address: 'New York',
+            unit: 'Đ4 - PV01',
+            date: 24,
+            quantity: 'New York',
+            resulte: '',
             tags: [{ value: 'Professor', priority: Priority.LOW }],
           },
           {
             key: 15,
             name: 'Nik Nest',
-            age: 34,
-            address: 'London',
+            date: 34,
+            quantity: 'London',
+            resulte: '',
             tags: [
               { value: 'Doctor', priority: Priority.HIGH },
               { value: 'Engineer', priority: Priority.MEDIUM },
@@ -181,8 +223,9 @@ export const getBasicTableData = (pagination: Pagination): Promise<BasicTableDat
           {
             key: 16,
             name: 'Zak Nikls',
-            age: 32,
-            address: 'Minsk',
+            date: 32,
+            quantity: 'Minsk',
+            resulte: '',
             tags: [
               { value: 'Doctor', priority: Priority.HIGH },
               { value: 'Teacher', priority: Priority.INFO },
@@ -191,8 +234,8 @@ export const getBasicTableData = (pagination: Pagination): Promise<BasicTableDat
           {
             key: 17,
             name: 'Petr Dan',
-            age: 29,
-            address: 'Gomel',
+            date: 29,
+            quantity: 'Gomel',
             tags: [
               { value: 'Engineer', priority: Priority.MEDIUM },
               { value: 'Teacher', priority: Priority.INFO },
@@ -201,8 +244,8 @@ export const getBasicTableData = (pagination: Pagination): Promise<BasicTableDat
           {
             key: 18,
             name: 'Alexa Pirs',
-            age: 19,
-            address: 'Moscow',
+            date: 19,
+            quantity: 'Moscow',
             tags: [
               { value: 'Professor', priority: Priority.LOW },
               { value: 'Doctor', priority: Priority.HIGH },
@@ -211,8 +254,8 @@ export const getBasicTableData = (pagination: Pagination): Promise<BasicTableDat
           {
             key: 19,
             name: 'Mark Brown',
-            age: 25,
-            address: 'London',
+            date: 25,
+            quantity: 'London',
             tags: [
               { value: 'Teacher', priority: Priority.INFO },
               { value: 'Doctor', priority: Priority.HIGH },
@@ -221,8 +264,8 @@ export const getBasicTableData = (pagination: Pagination): Promise<BasicTableDat
           {
             key: 20,
             name: 'Alex Brons',
-            age: 45,
-            address: 'Bronx',
+            date: 45,
+            quantity: 'Bronx',
             tags: [{ value: 'Professor', priority: Priority.LOW }],
           },
         ],
@@ -503,99 +546,225 @@ export const getEditableTableData = (pagination: Pagination): Promise<EditableTa
         data: [
           {
             key: 1,
-            name: `Edward`,
-            age: 32,
-            address: `London Park no.1`,
+            name: `Chuyên đề chuyển đối số 2024`,
+            date: `01/12/2024`,
+            quantity: `20`,
           },
           {
             key: 2,
-            name: `Alex`,
-            age: 45,
-            address: `London Park no.2`,
+            name: `Chủ đề ATTT bảo vệ tổ quốc`,
+            date: `05/12/2024`,
+            quantity: `20`,
           },
           {
             key: 3,
-            name: `Niko`,
-            age: 21,
-            address: `London Park no.3`,
+            name: `Chủ đề mới`,
+            date: `12/12/2024`,
+            quantity: `25`,
           },
           {
             key: 4,
             name: `Josh`,
-            age: 18,
-            address: `London Park no.4`,
+            date: `24/12/2024`,
+            quantity: `20`,
           },
           {
             key: 5,
             name: `Jo`,
-            age: 15,
-            address: `Minsk Park no.1`,
+            date: `25/12/2024`,
+            quantity: `10`,
           },
           {
             key: 6,
             name: `Jaimi`,
-            age: 18,
-            address: `London Park no.2`,
+            date: `24/12/2024`,
+            quantity: `20`,
           },
           {
             key: 7,
             name: `Alexa`,
-            age: 24,
-            address: `London Park no.6`,
+            date: `24/12/2024`,
+            quantity: `20`,
           },
           {
             key: 8,
             name: `Donald`,
-            age: 27,
-            address: `London Park no.7`,
+            date: `24/12/2024`,
+            quantity: `20`,
           },
           {
             key: 9,
             name: `Pavel`,
-            age: 17,
-            address: `London Park no.9`,
+            date: `24/12/2024`,
+            quantity: `20`,
           },
           {
             key: 10,
             name: `Nick`,
-            age: 18,
-            address: `London Park no.1`,
+            date: `24/12/2024`,
+            quantity: `20`,
           },
           {
             key: 11,
             name: `Dasha`,
-            age: 25,
-            address: `London Park no.2`,
+            date: `24/12/2024`,
+            quantity: `20`,
           },
           {
             key: 12,
             name: `Alex`,
-            age: 27,
-            address: `London Park no.3`,
+            date: `24/12/2024`,
+            quantity: `20`,
           },
           {
             key: 13,
             name: `Vic`,
-            age: 29,
-            address: `London Park no.2`,
+            date: `24/12/2024`,
+            quantity: `20`,
           },
           {
             key: 14,
             name: `Natalia`,
-            age: 25,
-            address: `London Park no.4`,
+            date: `24/12/2024`,
+            quantity: `20`,
           },
           {
             key: 15,
             name: `Zack`,
-            age: 27,
-            address: `London Park no.1`,
+            date: `24/12/2024`,
+            quantity: `20`,
           },
           {
             key: 16,
             name: `Jack`,
-            age: 31,
-            address: `London Park no.4`,
+            date: `24/12/2024`,
+            quantity: `20`,
+          },
+        ],
+        pagination: { ...pagination, total: 16 },
+      });
+    }, 1000);
+  });
+};
+
+// Data table kết quả user
+
+export const getEditableTableDataUser = (pagination: Pagination): Promise<EditableTableDataUser> => {
+  return new Promise((res) => {
+    setTimeout(() => {
+      res({
+        data: [
+          {
+            key: 1,
+            name: `Nguyễn Tiến Đạt`,
+            unit: 'Đ4 - PV01',
+            date: `01/12/2024`,
+            result: `20/20`,
+          },
+          {
+            key: 2,
+            name: `Trương Công Tới`,
+            unit: 'Đ4 - PV01',
+            date: `05/12/2024`,
+            result: `20/20`,
+          },
+          {
+            key: 3,
+            name: `Nguyễn Mạnh Hưng`,
+            unit: 'Đ4 - PV01',
+            date: `12/12/2024`,
+            result: `19/20`,
+          },
+          {
+            key: 4,
+            name: `Josh`,
+            unit: 'Đ4 - PV01',
+            date: `24/12/2024`,
+            result: `19/20`,
+          },
+          {
+            key: 5,
+            name: `Jo`,
+            unit: 'Đ4 - PV01',
+            date: `25/12/2024`,
+            result: `19/20`,
+          },
+          {
+            key: 6,
+            name: `Jaimi`,
+            unit: 'Đ4 - PV01',
+            date: `24/12/2024`,
+            result: `19/20`,
+          },
+          {
+            key: 7,
+            name: `Alexa`,
+            unit: 'Đ4 - PV01',
+            date: `24/12/2024`,
+            result: `19/20`,
+          },
+          {
+            key: 8,
+            name: `Donald`,
+            unit: 'Đ4 - PV01',
+            date: `24/12/2024`,
+            result: `19/20`,
+          },
+          {
+            key: 9,
+            name: `Pavel`,
+            unit: 'Đ4 - PV01',
+            date: `24/12/2024`,
+            result: `19/20`,
+          },
+          {
+            key: 10,
+            name: `Nick`,
+            unit: 'Đ4 - PV01',
+            date: `24/12/2024`,
+            result: `19/20`,
+          },
+          {
+            key: 11,
+            name: `Dasha`,
+            unit: 'Đ4 - PV01',
+            date: `24/12/2024`,
+            result: `19/20`,
+          },
+          {
+            key: 12,
+            name: `Alex`,
+            unit: 'Đ4 - PV01',
+            date: `24/12/2024`,
+            result: `19/20`,
+          },
+          {
+            key: 13,
+            name: `Vic`,
+            unit: 'Đ4 - PV01',
+            date: `24/12/2024`,
+            result: `19/20`,
+          },
+          {
+            key: 14,
+            name: `Natalia`,
+            unit: 'Đ4 - PV01',
+            date: `24/12/2024`,
+            result: `19/20`,
+          },
+          {
+            key: 15,
+            name: `Zack`,
+            unit: 'Đ4 - PV01',
+            date: `24/12/2024`,
+            result: `19/20`,
+          },
+          {
+            key: 16,
+            name: `Jack`,
+            unit: 'Đ4 - PV01',
+            date: `24/12/2024`,
+            result: `19/20`,
           },
         ],
         pagination: { ...pagination, total: 16 },
