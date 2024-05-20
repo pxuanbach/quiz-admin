@@ -15,6 +15,7 @@ export const Card = styled(CommonCard)`
     flex-wrap: wrap;
     gap: 3rem;
     align-items: center;
+    padding-top: 20px;
   }
   .ant-card-body:before {
     display: none;

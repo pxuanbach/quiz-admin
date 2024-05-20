@@ -15,6 +15,7 @@ import NewPasswordPage from '@app/pages/NewPasswordPage';
 import MainLayout from '@app/components/layouts/main/MainLayout/MainLayout';
 
 import CreateTestPage from '@app/pages/CreateTestPage';
+import ResultTestPage from '@app/pages/ResultTestPage';
 import ProfileLayout from '@app/components/profile/ProfileLayout';
 import RequireAuth from '@app/components/router/RequireAuth';
 import { withLoading } from '@app/hocs/withLoading.hoc';
@@ -29,6 +30,7 @@ export const DASHBOARD_PATH = '/';
 
 const DataTables = withLoading(DataTablesPage);
 const CreateTest = withLoading(CreateTestPage);
+const ResultTest = withLoading(ResultTestPage);
 
 const AuthLayoutFallback = withLoading(AuthLayout);
 const LogoutFallback = withLoading(Logout);
@@ -50,6 +52,7 @@ export const AppRouter: React.FC = () => {
           <Route index element={<Dashboard/>}/>
           <Route path="data-tables" element={<DataTables />} />
           <Route path="create-test" element={<CreateTest />} />
+          <Route path="result-test" element={<ResultTest />} />
           <Route path="profile" element={<ProfileLayout />}>
             <Route path="personal-info" element={<PersonalInfo />} />
             <Route path="security-settings" element={<SecuritySettings />} />

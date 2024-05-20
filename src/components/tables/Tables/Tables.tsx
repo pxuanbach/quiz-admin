@@ -16,7 +16,7 @@ export const Tables: React.FC = () => {
         <S.Card id="tree-table" title={t('tables.treeTable')} padding="1.25rem 1.25rem 0">
           <TreeTable />
         </S.Card> */}
-        <S.Card id="editable-table" title={t('tables.editableTable')} padding="1.25rem 1.25rem 0">
+        <S.Card id="editable-table" title={t('Danh sách bài thi')} padding="1.25rem 1.25rem 0">
           <EditableTable />
         </S.Card>
       </S.TablesWrapper>

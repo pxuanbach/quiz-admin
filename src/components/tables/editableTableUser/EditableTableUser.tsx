@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { BaseTable } from '@app/components/common/BaseTable/BaseTable';
-import { getEditableTableData, BasicTableRow, Pagination } from 'api/table.api';
+import { getEditableTableDataUser, BasicTableRow, Pagination } from 'api/table.api';
 import { EditableCell } from './EditableCell';
 import { BaseButton } from '@app/components/common/BaseButton/BaseButton';
 import { useTranslation } from 'react-i18next';
@@ -14,7 +14,7 @@ const initialPagination: Pagination = {
   pageSize: 10,
 };
 
-export const EditableTable: React.FC = () => {
+export const EditableTableUser: React.FC = () => {
   const [form] = BaseForm.useForm();
   const [tableData, setTableData] = useState<{ data: BasicTableRow[]; pagination: Pagination; loading: boolean }>({
     data: [],
@@ -28,7 +28,7 @@ export const EditableTable: React.FC = () => {
   const fetch = useCallback(
     (pagination: Pagination) => {
       setTableData((tableData) => ({ ...tableData, loading: true }));
-      getEditableTableData(pagination).then((res) => {
+      getEditableTableDataUser(pagination).then((res) => {
         if (isMounted.current) {
           setTableData({ data: res.data, pagination: res.pagination, loading: false });
         }
@@ -91,9 +91,15 @@ export const EditableTable: React.FC = () => {
       editable: true,
     },
     {
-      title: t('Tên bài thi'),
+      title: t('Họ và tên'),
       dataIndex: 'name',
       width: '50%',
+      editable: true,
+    },
+    {
+      title: t('Đơn vị'),
+      dataIndex: 'unit',
+      width: '25%',
       editable: true,
     },
     {
@@ -103,8 +109,8 @@ export const EditableTable: React.FC = () => {
       editable: true,
     },
     {
-      title: t('Số câu hỏi'),
-      dataIndex: 'quantity',
+      title: t('Kết quả'),
+      dataIndex: 'result',
       width: '10%',
       editable: true,
     },
