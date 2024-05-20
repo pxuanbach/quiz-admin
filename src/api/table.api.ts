@@ -9,8 +9,10 @@ export interface BasicTableRow {
   key: number;
   name: string;
   date: string;
-  quantity: string;
+  quantity?: string;
   tags?: Tag[];
+  unit?: string;
+  result?: string;
 }
 
 export interface BasicTableUserRow {
@@ -57,10 +59,8 @@ export const getBasicTableData = (pagination: Pagination): Promise<BasicTableDat
           {
             key: 1,
             name: 'John Brown',
-            unit: 'Đ4 - PV01',
             date: 32,
             quantity: 'New York No. 1 Lake Park',
-            resulte: '',
             tags: [
               { value: 'Architect', priority: Priority.LOW },
               { value: 'Engineer', priority: Priority.MEDIUM },
@@ -69,18 +69,14 @@ export const getBasicTableData = (pagination: Pagination): Promise<BasicTableDat
           {
             key: 2,
             name: 'Jim Green',
-            unit: 'Đ4 - PV01',
             date: 42,
             quantity: 'London No. 1 Lake Park',
-            resulte: '',
             tags: [{ value: 'Doctor', priority: Priority.HIGH }],
           },
           {
             key: 3,
             name: 'Joe Black',
-            unit: 'Đ4 - PV01',
             date: 32,
-            resulte: '',
             quantity: 'Sidney No. 1 Lake Park',
             tags: [
               { value: 'Professor', priority: Priority.INFO },
@@ -90,9 +86,7 @@ export const getBasicTableData = (pagination: Pagination): Promise<BasicTableDat
           {
             key: 4,
             name: 'Pavel Green',
-            unit: 'Đ4 - PV01',
             date: 30,
-            resulte: '',
             quantity: 'New York No. 1 Lake Park',
             tags: [
               { value: 'Engineer', priority: Priority.MEDIUM },
@@ -102,18 +96,14 @@ export const getBasicTableData = (pagination: Pagination): Promise<BasicTableDat
           {
             key: 5,
             name: 'Alex Brown',
-            unit: 'Đ4 - PV01',
             date: 26,
-            resulte: '',
             quantity: 'Minsk',
             tags: [{ value: 'Engineer', priority: Priority.MEDIUM }],
           },
           {
             key: 6,
             name: 'Josh Black',
-            unit: 'Đ4 - PV01',
             date: 21,
-            resulte: '',
             quantity: 'New York No. 1 Lake Park',
             tags: [
               { value: 'Teacher', priority: Priority.INFO },
@@ -123,28 +113,22 @@ export const getBasicTableData = (pagination: Pagination): Promise<BasicTableDat
           {
             key: 7,
             name: 'Cris Green',
-            unit: 'Đ4 - PV01',
             date: 22,
-            resulte: '',
             quantity: 'Sidney No. 1 Lake Park',
             tags: [{ value: 'Architect', priority: Priority.LOW }],
           },
           {
             key: 8,
             name: 'Jaime Black',
-            unit: 'Đ4 - PV01',
             date: 23,
-            resulte: '',
             quantity: 'New York No. 1 Lake Park',
             tags: [{ value: 'Engineer', priority: Priority.MEDIUM }],
           },
           {
             key: 9,
             name: 'Alina Brown',
-            unit: 'Đ4 - PV01',
             date: 19,
             quantity: 'Minsk',
-            resulte: '',
             tags: [
               { value: 'Professor', priority: Priority.LOW },
               { value: 'Teacher', priority: Priority.INFO },
@@ -153,10 +137,8 @@ export const getBasicTableData = (pagination: Pagination): Promise<BasicTableDat
           {
             key: 10,
             name: 'Cris Brown',
-            unit: 'Đ4 - PV01',
             date: 25,
             quantity: 'London',
-            resulte: '',
             tags: [
               { value: 'Engineer', priority: Priority.MEDIUM },
               { value: 'Teacher', priority: Priority.INFO },
@@ -165,10 +147,8 @@ export const getBasicTableData = (pagination: Pagination): Promise<BasicTableDat
           {
             key: 11,
             name: 'Alina Fens',
-            unit: 'Đ4 - PV01',
             date: 19,
             quantity: 'Minsk',
-            resulte: '',
             tags: [
               { value: 'Professor', priority: Priority.LOW },
               { value: 'Teacher', priority: Priority.INFO },
@@ -177,10 +157,8 @@ export const getBasicTableData = (pagination: Pagination): Promise<BasicTableDat
           {
             key: 12,
             name: 'Alex Snak',
-            unit: 'Đ4 - PV01',
             date: 28,
             quantity: 'Brest',
-            resulte: '',
             tags: [
               { value: 'Professor', priority: Priority.LOW },
               { value: 'Doctor', priority: Priority.HIGH },
@@ -189,10 +167,8 @@ export const getBasicTableData = (pagination: Pagination): Promise<BasicTableDat
           {
             key: 13,
             name: 'Pavel Dubrouski',
-            unit: 'Đ4 - PV01',
             date: 26,
             quantity: 'Minsk',
-            resulte: '',
             tags: [
               { value: 'Professor', priority: Priority.LOW },
               { value: 'Doctor', priority: Priority.HIGH },
@@ -203,10 +179,8 @@ export const getBasicTableData = (pagination: Pagination): Promise<BasicTableDat
           {
             key: 14,
             name: 'Jack Donald',
-            unit: 'Đ4 - PV01',
             date: 24,
             quantity: 'New York',
-            resulte: '',
             tags: [{ value: 'Professor', priority: Priority.LOW }],
           },
           {
@@ -214,7 +188,6 @@ export const getBasicTableData = (pagination: Pagination): Promise<BasicTableDat
             name: 'Nik Nest',
             date: 34,
             quantity: 'London',
-            resulte: '',
             tags: [
               { value: 'Doctor', priority: Priority.HIGH },
               { value: 'Engineer', priority: Priority.MEDIUM },
@@ -225,7 +198,6 @@ export const getBasicTableData = (pagination: Pagination): Promise<BasicTableDat
             name: 'Zak Nikls',
             date: 32,
             quantity: 'Minsk',
-            resulte: '',
             tags: [
               { value: 'Doctor', priority: Priority.HIGH },
               { value: 'Teacher', priority: Priority.INFO },
