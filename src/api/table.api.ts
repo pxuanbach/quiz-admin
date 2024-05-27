@@ -13,16 +13,9 @@ export interface BasicTableRow {
   tags?: Tag[];
   unit?: string;
   result?: string;
+  time?: string;
 }
 
-export interface BasicTableUserRow {
-  key: number;
-  name: string;
-  unit: string;
-  date: string;
-  result: string;
-  tags?: Tag[];
-}
 
 export interface Pagination {
   current?: number;
@@ -632,6 +625,7 @@ export const getEditableTableDataUser = (pagination: Pagination): Promise<Editab
             unit: 'Đ4 - PV01',
             date: `01/12/2024`,
             result: `20/20`,
+            time: '12:30'
           },
           {
             key: 2,
@@ -639,6 +633,7 @@ export const getEditableTableDataUser = (pagination: Pagination): Promise<Editab
             unit: 'Đ4 - PV01',
             date: `05/12/2024`,
             result: `20/20`,
+            time: '12:30'
           },
           {
             key: 3,
@@ -646,6 +641,7 @@ export const getEditableTableDataUser = (pagination: Pagination): Promise<Editab
             unit: 'Đ4 - PV01',
             date: `12/12/2024`,
             result: `19/20`,
+            time: '12:30'
           },
           {
             key: 4,
@@ -653,6 +649,7 @@ export const getEditableTableDataUser = (pagination: Pagination): Promise<Editab
             unit: 'Đ4 - PV01',
             date: `24/12/2024`,
             result: `19/20`,
+            time: '12:30'
           },
           {
             key: 5,
@@ -660,6 +657,7 @@ export const getEditableTableDataUser = (pagination: Pagination): Promise<Editab
             unit: 'Đ4 - PV01',
             date: `25/12/2024`,
             result: `19/20`,
+            time: '12:30'
           },
           {
             key: 6,

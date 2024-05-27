@@ -99,7 +99,7 @@ export const EditableTableUser: React.FC = () => {
     {
       title: t('Đơn vị'),
       dataIndex: 'unit',
-      width: '25%',
+      width: '15%',
       editable: true,
     },
     {
@@ -112,6 +112,12 @@ export const EditableTableUser: React.FC = () => {
       title: t('Kết quả'),
       dataIndex: 'result',
       width: '10%',
+      editable: true,
+    },
+    {
+      title: t('Thời gian'),
+      dataIndex: 'time',
+      width: '25%',
       editable: true,
     },
     {
